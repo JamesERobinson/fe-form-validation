@@ -39,3 +39,14 @@ function handleSubmit(event) {
         event.preventDefault();
     }
 }
+function validateBod(event) {
+    const BodInput = event.target.value
+    //let today = Date.now();
+    let today = new Date(Date.now());
+    console.log(today)
+    let birth = new Date(BodInput);
+    console.log(birth)
+    //console.log(Date.parse(BodInput));
+    let age = (today - birth);
+    console.log(age);
+}
