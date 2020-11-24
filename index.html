@@ -12,6 +12,7 @@
 <body>
     <h1>Submit to the Form!</h1>
     <form class="signUpForm" method="GET" action="/index.html">
+        <p id='signup-username-error'></p>
         <label>Username:
             <input type="text" class="signupInput" name='username' required
             onblur="validateUserName(event)">
