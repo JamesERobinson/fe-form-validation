@@ -14,3 +14,15 @@ display: flex;
 flex-direction: column;
 align-items: center;
   }
+
+.valid {
+border-style: groove;
+border-color: rgb(2, 249, 39);
+border-width: thick;
+  }
+
+.invalid {
+    border-style: groove;
+    border-color: red;
+    border-width: thick;
+      }
