@@ -1,10 +1,11 @@
-const userNameError = document.getElementById('signup-username-error')
+const userNameError = document.getElementById('signup-username-error');
+const nameError = document.getElementById('name-error')
 
 function validateUserName(event) {
     const userNameInput = event.target;
 
     const isValid = /\d+/.test(userNameInput.value)
-    
+
     if (isValid) {
         userNameInput.classList.add('valid')
         userNameInput.classList.remove('invalid')
@@ -16,10 +17,25 @@ function validateUserName(event) {
         userNameError.innerText = "Please include a number in your username"
     }
 }
-function handleSubmit(event){
-    const inputs =[...document.getElementsByClassName('')];
-    let isValid = inputs.every((input)=> input.classList.contains('valid'))
-    if (!isValid){
+function validateName(event) {
+    const nameInput = event.target;
+    const isValid = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(nameInput.value);
+    console.log(isValid)
+    if (isValid) {
+        nameInput.classList.add('valid')
+        nameInput.classList.remove('invalid')
+        nameError.innerText = '';
+    }
+    else {
+        nameInput.classList.add('invalid')
+        nameInput.classList.remove('valid')
+        nameError.innerText = 'Only Valid Names Please';
+    }
+}
+function handleSubmit(event) {
+    const inputs = [...document.getElementsByClassName('')];
+    let isValid = inputs.every((input) => input.classList.contains('valid'))
+    if (!isValid) {
         event.preventDefault();
     }
 }

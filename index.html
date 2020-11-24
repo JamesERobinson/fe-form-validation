@@ -11,20 +11,21 @@
 
 <body>
     <h1>Submit to the Form!</h1>
-    <form class="signUpForm" method="GET" action="/index.html" onsubmit="handleSubmit(event)">
+    <form class="signUpForm" method="GET" action="/inside.html" onsubmit="handleSubmit(event)">
         <p id='signup-username-error'></p>
         <label>Username:
             <input type="text" class="signupInput" name='username' required onblur="validateUserName(event)">
         </label>
         <br>
         <br>
+        <p id='name-error'></p>
         <label>Firstname:
-            <input type="text" class="signupInput" name="firstname" required>
+            <input type="text" class="signupInput" name="firstname" required onkeyup="validateName(event)">
         </label>
         <br>
         <br>
         <label>LastName:
-            <input type="text" class="signupInput" name="lastname" required>
+            <input type="text" class="signupInput" name="lastname" required onkeyup="validateName(event)">
         </label>
         <br>
         <br>
