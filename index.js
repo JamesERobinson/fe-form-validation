@@ -1,5 +1,6 @@
 const userNameError = document.getElementById('signup-username-error');
 const nameError = document.getElementById('name-error')
+const bodError = document.getElementById('bod-error');
 
 function validateUserName(event) {
     const userNameInput = event.target;
@@ -20,7 +21,7 @@ function validateUserName(event) {
 function validateName(event) {
     const nameInput = event.target;
     const isValid = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(nameInput.value);
-    console.log(isValid)
+
     if (isValid) {
         nameInput.classList.add('valid')
         nameInput.classList.remove('invalid')
@@ -33,20 +34,26 @@ function validateName(event) {
     }
 }
 function handleSubmit(event) {
-    const inputs = [...document.getElementsByClassName('')];
+    const inputs = [...document.getElementsByClassName('signupInput')];
     let isValid = inputs.every((input) => input.classList.contains('valid'))
     if (!isValid) {
         event.preventDefault();
     }
 }
 function validateBod(event) {
-    const BodInput = event.target.value
-    //let today = Date.now();
+    const { value: bodsec } = event.target
+    const bodInput = event.target;
     let today = new Date(Date.now());
-    console.log(today)
-    let birth = new Date(BodInput);
-    console.log(birth)
-    //console.log(Date.parse(BodInput));
+    let birth = new Date(bodsec);
     let age = (today - birth);
-    console.log(age);
+    if (age > 5.676e+11) {
+        bodInput.classList.add('valid')
+        bodInput.classList.remove('invalid')
+        bodError.innerText = 'Over 18';
+    }
+    else {
+        bodInput.classList.add('invalid')
+        bodInput.classList.remove('valid')
+        bodError.innerText = "Over 18's Only";
+    }
 }

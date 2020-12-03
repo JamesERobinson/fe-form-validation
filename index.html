@@ -13,28 +13,31 @@
     <h1>Submit to the Form!</h1>
     <form class="signUpForm" method="GET" action="/inside.html" onsubmit="handleSubmit(event)">
         <p id='signup-username-error'></p>
-        <label>Username:
-            <input type="text" class="signupInput" name='username' required onblur="validateUserName(event)">
-        </label>
-        <br>
-        <br>
-        <p id='name-error'></p>
-        <label>Firstname:
-            <input type="text" class="signupInput" name="firstname" required onkeyup="validateName(event)">
-        </label>
-        <br>
-        <br>
-        <label>LastName:
-            <input type="text" class="signupInput" name="lastname" required onkeyup="validateName(event)">
-        </label>
-        <br>
-        <br>
-        <label>Date of Birth:
-            <input type="date" class="signupInput" name="bod" required onchange="validateBod(event)">
-        </label>
-        <br>
-        <br>
-        <button type="submit" class="signupSubmit">Submit</button>
+        <div class="labelBox">
+            <label>Username:
+                <input type="text" class="signupInput" name='username' required onblur="validateUserName(event)">
+            </label>
+            <br>
+            <br>
+            <p id='name-error'></p>
+            <label>Firstname:
+                <input type="text" class="signupInput" name="firstname" required onkeyup="validateName(event)">
+            </label>
+            <br>
+            <br>
+            <label>LastName:
+                <input type="text" class="signupInput" name="lastname" required onkeyup="validateName(event)">
+            </label>
+            <br>
+            <br>
+            <p id='bod-error'></p>
+            <label>Date of Birth:
+                <input type="date" class="signupInput" name="bod" required onchange="validateBod(event)">
+            </label>
+            <br>
+            <br>
+            <div class="labelBox">
+                <button type="submit" class="signupSubmit">Submit</button>
     </form>
 
 </body>

@@ -26,3 +26,15 @@ border-width: thick;
     border-color: red;
     border-width: thick;
       }
+
+.labelBox {
+  margin: 0;
+    padding: 10px;
+}
+.signupInput
+{
+  text-size-adjust: 20px;
+}
+p{
+  text-align: center;
+}
